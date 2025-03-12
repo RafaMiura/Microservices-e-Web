@@ -3,6 +3,7 @@ package br.com.fiap.ms_produto.service;
 import br.com.fiap.ms_produto.dto.ProdutoRequestDTO;
 import br.com.fiap.ms_produto.dto.ProdutoResponseDTO;
 import br.com.fiap.ms_produto.entities.Produto;
+import br.com.fiap.ms_produto.repositories.CategoriaRepository;
 import br.com.fiap.ms_produto.repositories.ProdutoRepository;
 import br.com.fiap.ms_produto.service.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
@@ -21,6 +22,9 @@ public class ProdutoService {
     @Autowired
     private ProdutoRepository repository;
 
+    @Autowired
+    private CategoriaRepository categoriaRepository;
+
     @Transactional(readOnly = true)
     public List<ProdutoResponseDTO> findAll() {
         List<Produto> list = repository.findAll();
@@ -29,6 +33,7 @@ public class ProdutoService {
         //utilizando expressão lambda
         // return list.stream().map(x -> new ProdutoResponseDTO(x)).toList();
     }
+    
 
     @Transactional(readOnly = true)
     public ProdutoResponseDTO findById(Long id) {
