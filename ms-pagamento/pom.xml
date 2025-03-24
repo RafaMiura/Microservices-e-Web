@@ -8,7 +8,7 @@
 		<version>3.4.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.github.RafaMiura</groupId>
+	<groupId>com.github.cidarosa</groupId>
 	<artifactId>ms-pagamento</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ms-pagamento</name>
@@ -76,6 +76,7 @@
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
+							<version>1.18.34</version>
 						</path>
 					</annotationProcessorPaths>
 				</configuration>
